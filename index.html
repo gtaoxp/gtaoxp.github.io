@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="GTA Online XP Calculator">
+<meta name="theme-color" content="#04594c">
+<meta name="description"
+    content="Useful tool to calculate the XP necessary from two levels in GTA Online for Reputations Points (RP), Arena Points (AP) and LS Car Meet Reputation">
+<meta name="keywords" content="MMORPG, RPG, FREE, freegame, game, videogame">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gatoxp.github.io">
+<meta property="og:title" content="Try it now!">
+<meta property="og:description"
+    content="Useful tool to calculate the XP necessary from two levels in GTA Online for Reputations Points (RP), Arena Points (AP) and LS Car Meet Reputation">
+<meta property="og:image" content="./assets/RP.png">
+<meta property="og:site_name" content="GTA Online XP Calculator">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://gatoxp.github.io">
+<meta property="twitter:creator" content="@MatreGEEK2">
+<meta property="twitter:site" content="@MatreGEEK2">
+<meta property="twitter:title" content="GTA Online XP Calculator">
+<meta property="twitter:description"
+    content="Useful tool to calculate the XP necessary from two levels in GTA Online for Reputations Points (RP), Arena Points (AP) and LS Car Meet Reputation">
+<meta property="twitter:image" content="./assets/RP.png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./assets/RP.png">
+    <link rel="page icon" href="./assets/RP.png">
+    <title>GTA Online - XP Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GTA Online XP Calculator</h1>
+
+        <div>
+            <label for="select_type">Enter a level:</label>
+            <select id="select_type" onchange="calculateSingleLevel(), calculateBetweenLevels()">
+                <option value="RP">RP (Reputation Points)</option>
+                <option value="AP">AP (Arena Points)</option>
+                <option value="LSCM-RP">LSCM-RP (LS Car Meet Reputation Points)</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="singleLevel">Enter a level:</label>
+            <input type="number" id="singleLevel" placeholder="Level" oninput="calculateSingleLevel()">
+            <button onclick="calculateSingleLevel()">Calculate XP</button>
+            <p id="singleResult"></p>
+        </div>
+
+        <div>
+            <label for="level1">Enter Level 1:</label>
+            <input type="number" id="level1" placeholder="Level 1" oninput="calculateBetweenLevels()">
+            <label for="level2">Enter Level 2:</label>
+            <input type="number" id="level2" placeholder="Level 2" oninput="calculateBetweenLevels()">
+            <button onclick="calculateBetweenLevels()">Calculate XP Between Levels</button>
+            <p id="betweenLevelsResult"></p>
+        </div>
+    </div>
+
+    <script src="./js/levels.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

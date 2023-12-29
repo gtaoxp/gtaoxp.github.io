@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+    margin: 5px;
+    padding: 8px;
+    width: calc(100% - 18px);
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+    }
+}
