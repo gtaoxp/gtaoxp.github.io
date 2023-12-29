@@ -7,13 +7,20 @@
  */
 function getXpNecessary(level, type) {
     if (type == "RP") {
-        let query = `RANK_XP_${level}`
-        let value = levels[query]
-        if (value == undefined) return false
+        //Level Max is 8000
+        if (level >8000) return false 
+        if (level >= 98) {
+            return 25 * (level ** 2) + 23575 * level - 1023150
+        }
         else {
-            let number = value[0]?.value
-            if (number !== undefined) return number
-            else return false
+            let query = `RANK_XP_${level}`
+            let value = levels[query]
+            if (value == undefined) return false
+            else {
+                let number = value[0]?.value
+                if (number !== undefined) return number
+                else return false
+            }
         }
     }
     else if (type == "AP") {
