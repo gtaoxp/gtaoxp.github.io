@@ -8,7 +8,7 @@
 function getXpNecessary(level, type) {
     if (type == "RP") {
         //Level Max is 8000
-        if (level >8000) return false 
+        if (level > 8000) return false
         if (level >= 98) {
             return 25 * (level ** 2) + 23575 * level - 1023150
         }
@@ -79,7 +79,7 @@ function calculateSingleLevel() {
 
     let xp = getXpNecessary(level, type)
     if (xp !== false) {
-        resultElement.textContent = `Total ${type} necessary for Level ${level.toLocaleString()}: ${xp.toLocaleString()}`;
+        resultElement.textContent = `Total ${type} necessary for Level ${level.toLocaleString("en")}: ${xp.toLocaleString("en")}`;
     } else {
         resultElement.textContent = "Invalid level or data not available.";
     }
@@ -97,10 +97,10 @@ function calculateBetweenLevels() {
     let xpBetweenLevels = getXpNecessaryBetweenTwoLevels(level1, level2, type);
 
     if (xpBetweenLevels !== false) {
-        resultElement.textContent = `Total ${type} between Level ${level1.toLocaleString()} and Level ${level2.toLocaleString()}: ${xpBetweenLevels.toLocaleString()}`;
+        resultElement.textContent = `Total ${type} between Level ${level1.toLocaleString("en")} and Level ${level2.toLocaleString("en")}: ${xpBetweenLevels.toLocaleString("en")}`;
     } else {
         resultElement.textContent = "Invalid levels or data not available.";
     }
 }
 
-//console.log(getXpNecessaryBetweenTwoLevels(561, 562).toLocaleString())
+//console.log(getXpNecessaryBetweenTwoLevels(561, 562).toLocaleString("en"))
