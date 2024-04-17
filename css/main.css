@@ -28,11 +28,18 @@ body {
     margin: 0;
 }
 
+#lumicon {
+    width: 32px;
+    position: absolute;
+    left: 65%;
+    cursor: pointer;
+}
+
 .container {
     text-align: center;
     max-width: 400px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
 }
 
@@ -56,7 +63,7 @@ label {
 input,
 select,
 button {
-    font-family: chalet, Courier, monospace;
+    font-family: chalet;
     margin: 5px;
     padding: 8px;
     width: calc(100% - 18px);
@@ -76,6 +83,26 @@ button {
 p {
     margin-top: 10px;
     font-weight: bold;
+    font-family: chalet;
+}
+
+.dark {
+    color: white;
+    background-color: rgb(34, 34, 34);
+}
+
+.dark select, .dark input, .dark button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(77, 76, 76);
+}
+
+.dark .container {
+    background-color: rgb(49, 49, 49);
+
+}
+
+.black-to-white {
+    filter: invert(100%);
 }
 
 @media screen and (max-width: 600px) {
@@ -92,5 +119,9 @@ p {
     input,
     button {
         width: 85%;
+    }
+
+    #lumicon {
+        left: 80%;
     }
 }

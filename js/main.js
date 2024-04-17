@@ -103,4 +103,31 @@ function calculateBetweenLevels() {
     }
 }
 
-//console.log(getXpNecessaryBetweenTwoLevels(561, 562).toLocaleString("en"))
+let luminosity = localStorage.getItem("luminosity") || "white" // White default
+setLuminosity(luminosity)
+
+function setLuminosity(lum = undefined) {
+    if (!lum) {
+        console.log("test")
+        luminosity = (luminosity == "white") ? 'black' : "white"
+        localStorage.setItem("luminosity", String(luminosity))
+    }
+    else {
+        luminosity = lum
+    }
+
+    let container = document.documentElement; //document.querySelector(".container")
+    let lumicon = document.getElementById('lumicon')
+
+    if (luminosity == "white") {
+        //Light Mode
+        container.classList.remove("dark")
+        lumicon.classList.remove("black-to-white")
+    }
+    else {
+        //Dark Mode
+        container.classList.add("dark")
+        lumicon.classList.add("black-to-white")
+    }
+}
+
